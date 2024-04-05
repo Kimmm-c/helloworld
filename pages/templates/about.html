@@ -1,1 +1,37 @@
-<h3>About Page</h3>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="m-5 p-5">
+    <h2>About the Dataset</h2>
+    <p class="text-muted">
+        In the vast expanse of outer space, numerous objects orbit around us, some much closer than we might realize.
+        Despite their seeming distance, objects as close as 70,000 kilometers have the potential to disrupt natural
+        phenomena on Earth. It's crucial for us to understand the nature of these objects, particularly those that
+        pose potential harm. The dataset provided here compiles a comprehensive list of NASA-certified asteroids,
+        specifically focusing on those classified as Near-Earth Objects (NEOs). These NEOs are objects whose orbits
+        bring them into proximity with Earth, making them worthy of close scrutiny and study.
+    </p>
+    <h2>Features for Prediction</h2>
+    <p class="text-muted">
+        To aid in predicting the hazardous potential of these NEOs, we rely on a set of key features:<br><br>
+
+        <b>Estimated Diameter (Min and Max)</b>: The estimated size of the NEO, providing insight into its potential impact if
+        it were to collide with Earth. <br>
+        <b>Relative Velocity</b>: The speed at which the NEO is traveling relative to Earth, influencing the severity of
+        any potential impact.<br>
+        <b>Miss Distance</b>: The closest distance at which the NEO passes by Earth, indicating how close it comes to our
+        planet's orbit.<br>
+        <b>Absolute Magnitude</b>: A measure of the NEO's intrinsic brightness, which correlates with its size and helps
+        classify its potential hazard level.
+    </p>
+
+    <h2>Try Out</h2>
+    <p class="text-muted">
+        To utilize this dataset and generate predictions regarding the hazardous nature of NEOs, users can input
+        specific information about these objects on the Try Out page. By providing data on estimated diameter,
+        relative velocity, miss distance, and absolute magnitude, users can obtain valuable insights into the
+        potential risk posed by these celestial bodies.
+    </p>
+</div>
+
+{% endblock %}

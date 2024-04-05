@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{% url 'makePrediction' %}" method="post">
+    {% csrf_token %}
+    <label for="est_diameter_min">Estimated Diameter Min:</label><br>
+    <input type="text" id="est_diameter_min" name="est_diameter_min"><br>
+
+    <label for="est_diameter_max">Estimated Diameter Max:</label><br>
+    <input type="text" id="est_diameter_max" name="est_diameter_max"><br>
+
+    <label for="relative_velocity">Relative Velocity:</label><br>
+    <input type="text" id="relative_velocity" name="relative_velocity"><br>
+
+    <label for="miss_distance">Miss Distance:</label><br>
+    <input type="text" id="miss_distance" name="miss_distance"><br>
+
+    <label for="absolute_magnitude">Absolute Magnitude:</label><br>
+    <input type="text" id="absolute_magnitude" name="absolute_magnitude"><br>
+
+    <div style="text-align:center;">
+        <button type="submit" class="main-btn">Submit</button>
+    </div>
+</form>
+{% if prediction %}
+    <div class="{%if prediction == 'Not Hazardous' %}green{% else %}red{% endif %} prediction-bg row justify-content-center ">
+        <h3>{{ prediction }}</h3>
+    </div>
+{% endif %}
+{% endblock %}

@@ -1,11 +1,11 @@
-from django.urls import path
-from .views import homePageView, aboutPageView, kimPageView, results, homePost
+from django.urls import path, include
+from .views import aboutPageView, tryOut, makePrediction
 
 
 urlpatterns = [
-    path('', homePageView, name='home'),
+    path('', aboutPageView, name='about'),
     path('about/', aboutPageView, name='about'),
-    path('kim/', kimPageView, name='kim'),
-    path('homePost/', homePost, name='homePost'),
-    path('results/<int:choice>/<str:gmat>/', results, name='results'),
+    path('tryOut/', tryOut, name='tryOut'),
+    path('makePrediction/', makePrediction, name='makePrediction'),
+    path('', include("django.contrib.auth.urls")),
 ]
